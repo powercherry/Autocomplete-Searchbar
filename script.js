@@ -13,7 +13,8 @@ let displayArr = [];
 
 _input.addEventListener('input',(e)=>{
     let userInput = e.target.value;
-    displayArr = countries.filter((item) =>arrayLogic(item,userInput));
+    userInput = userInput.toLowerCase();
+    displayArr = countries.filter((item) =>arrayLogic(item.toLowerCase(),userInput));
     _listCountries.innerHTML = '';
     displayArr.forEach((item,idx)=>{
         if(idx<maxListLength && _input.value!=''){
